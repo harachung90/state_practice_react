@@ -3,19 +3,18 @@ import './App.css';
 import React from 'react';
 
 function App() {
-    const [things, setThings] = React.useState(["Thing 1", "Thing 2"])
-    const thingsArray = ["Thing 1", "Thing 2"]
+    const [thingsArray, setThingsArray] = React.useState(["Thing 1", "Thing 2"])
 
     function addItem() {
-        const newThingText = `Thing ${things.length + 1}`
-        setThings(prevState => [...prevState, newThingText])
+        const newThingText = `Thing ${thingsArray.length + 1}`
+        setThingsArray(prevState => [...prevState, newThingText])
 
         // let num = thingsArray.length + 1;
         // thingsArray.push("Thing " + num);
         //console.log(thingsArray);
     }
 
-    const thingsElements = things.map(thing => <p key={thing}>{thing}</p>)
+    const thingsElements = thingsArray.map(thing => <p key={thing}>{thing}</p>)
 
     return (
         <div className="container">
